@@ -1,5 +1,10 @@
 # from https://github.com/librephoenix/nixos-config/blob/main/
-{ config, pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   config = {
@@ -27,9 +32,6 @@
       "de_DE.UTF-8/UTF-8"
     ];
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nix.settings.trusted-users = [ "@wheel" ];
-
     boot.kernelParams = [
       "quiet"
       "splash"
@@ -45,29 +47,37 @@
     programs.nano.enable = lib.mkForce false;
 
     console = {
-	font = "Lat2-Terminus16";
-	keyMap = "de";
+      font = "Lat2-Terminus16";
+      keyMap = "de";
     };
 
-    # Automated garbage collection
+    # Automated garbage collection & flake activation
     nix = {
-	settings.auto-optimise-store = true;
-	gc = {
-	    automatic = true;
-	    dates = "weekly";
-	    options = "--delete-older-than 7d";
-	};
+      settings = {
+
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        trusted-users = [ "@wheel" ];
+        auto-optimise-store = true;
+      };
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+      };
     };
 
     environment.systemPackages = with pkgs; [
-	curl 
-	git 
-	wget 
-	tree
-	tldr
-	sl
-	# Home-Manager
-	inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
+      curl
+      git
+      wget
+      tree
+      tldr
+      sl
+      # Home-Manager
+      inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
     ];
   };
 }

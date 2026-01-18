@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
-	cfg = config.userSettings.starship;
+  cfg = config.userSettings.starship;
 in
 {
-	options.userSettings.starship.enable = lib.mkEnableOption "Enable starship prompt";
+  options.userSettings.starship.enable = lib.mkEnableOption "Enable starship prompt";
 
-	config = lib.mkIf (cfg.enable) {
-		programs.starship.enable = true;
-	};
+  config = lib.mkIf (cfg.enable) {
+    programs.starship.enable = true;
+  };
 
-	imports = [ ./theme.nix ];
+  imports = [ ./theme.nix ];
 }
