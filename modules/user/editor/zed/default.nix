@@ -85,7 +85,7 @@ in
         };
       }
       {
-        context = "vim_mode == normal || (ProjectPanel && !editing) || !Editor";
+        context = "vim_mode == normal || (ProjectPanel && !editing) || !Editor && !Terminal";
         bindings = {
           "space f f" = "file_finder::Toggle";
           "space e" = "workspace::ToggleLeftDock";
