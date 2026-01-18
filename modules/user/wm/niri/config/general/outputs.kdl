@@ -1,0 +1,15 @@
+output "DP-3" {
+	// off
+	mode "2560x1440@164.999"
+	scale 1.0
+	position x=1920 y=0
+	variable-refresh-rate on-demand=true
+	focus-at-startup
+}
+
+output "DP-4" {
+	// off
+	mode "1920x1080@144.001"
+	scale 1.0
+	position x=0 y=150
+}
