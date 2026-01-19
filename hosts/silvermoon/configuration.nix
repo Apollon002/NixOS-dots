@@ -4,7 +4,7 @@
   networking.hostName = "silvermoon";
 
   ### activate modules ###
-  # Pipewire, NetworkManager, Neovim, dgop enabled by default
+  # Pipewire, NetworkManager, Neovim, btop enabled by default
   systemSettings = {
     # Create users
     users = [ "jannik" ];
