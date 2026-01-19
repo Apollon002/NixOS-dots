@@ -13,7 +13,7 @@ let
 in
 {
   options.userSettings.wm.enable = lib.mkOption {
-    description = "Window Manager settings to activate for this user";
+    description = "Window Manager configs to activate for this user";
     type = lib.types.listOf (lib.types.enum availableWM);
     default = [ ];
   };

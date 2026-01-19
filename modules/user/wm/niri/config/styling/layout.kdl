@@ -8,7 +8,7 @@ layout {
     always-center-single-column
     empty-workspace-above-first
     default-column-display "tabbed"
-    background-color "black"
+
 
     preset-column-widths {
         proportion 0.33333
@@ -27,23 +27,11 @@ layout {
     focus-ring {
         on
         width 3
-	// active-color "#7fc8ff"
-        active-gradient from="#d6afff" to="#5e5ad8" angle=135
-        inactive-color "#505050"
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        urgent-color "#9b0000"
-        // urgent-gradient from="#800" to="#a33" angle=45
     }
 
     border {
         off
         width 3
-	// active-color "#7fc8ff"
-        active-gradient from="#d6afff" to="#5e5ad8" angle=135
-        inactive-color "#505050"
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        urgent-color "#9b0000"
-        // urgent-gradient from="#800" to="#a33" angle=45
     }
 
     shadow {
@@ -52,8 +40,6 @@ layout {
         spread 5
         offset x=0 y=5
         draw-behind-window true
-        color "#00000070"
-        // inactive-color "#00000054"
     }
 
     tab-indicator {
@@ -66,18 +52,10 @@ layout {
         position "right"
         gaps-between-tabs 2
         corner-radius 8
-        active-color "#d6afff"
-        inactive-color "gray"
-        urgent-color "red"
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        // urgent-gradient from="#800" to="#a33" angle=45
     }
 
     insert-hint {
         // off
-        color "#ffc87f80"
-        // gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
     }
 
     struts {

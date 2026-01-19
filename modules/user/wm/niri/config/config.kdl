@@ -7,6 +7,7 @@ include "styling/layout.kdl"
 include "styling/animations.kdl"
 include "styling/corners.kdl"
 include "styling/cursor.kdl"
+include "styling/colors.kdl"
 
 // General
 include "general/input.kdl"
