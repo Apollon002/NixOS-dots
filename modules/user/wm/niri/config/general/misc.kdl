@@ -7,4 +7,4 @@ hotkey-overlay {
 }
 
 // Turn of titlebar for most applications
-// prefer-no-csd
+prefer-no-csd
