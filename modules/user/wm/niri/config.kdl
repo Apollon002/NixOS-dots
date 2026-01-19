@@ -4,7 +4,6 @@
 
 // Styling
 include "styling/colors.kdl"
-include "dms/colors.kdl"
 include "styling/layout.kdl"
 include "styling/animations.kdl"
 include "styling/corners.kdl"
