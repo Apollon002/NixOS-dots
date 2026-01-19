@@ -12,9 +12,6 @@
     # Firefox Addons
     firefoxAddons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefoxAddons.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Awww Wallpaper Wallpaper-Manager
-    awww.url = "git+https://codeberg.org/LGFae/awww";
   };
 
   outputs =

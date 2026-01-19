@@ -29,7 +29,6 @@
     symbols.bibataCursor.enable = true;
 
     ### UI ###
-    ui.awww.enable = true;
 
     ### Security ###
     bitwarden.enable = true;
