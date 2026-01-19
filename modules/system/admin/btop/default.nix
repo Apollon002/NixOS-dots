@@ -10,7 +10,7 @@
     default = true;
   };
 
-  config = lib.mkIf config.systemSettings.dgop.enable {
+  config = lib.mkIf config.systemSettings.btop.enable {
     environment.systemPackages = with pkgs; [
       btop
     ];
