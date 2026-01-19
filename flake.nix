@@ -12,6 +12,10 @@
     # Firefox Addons
     firefoxAddons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefoxAddons.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Dank Material Shell
+    dms.url = "github:AvengeMedia/DankMaterialShell";
+    dms.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
