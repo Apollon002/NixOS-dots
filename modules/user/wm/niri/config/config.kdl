@@ -10,6 +10,7 @@ include "styling/cursor.kdl"
 include "styling/colors.kdl"
 
 // General
+include "general/misc.kdl"
 include "general/input.kdl"
 include "general/outputs.kdl"
 include "general/keymaps.kdl"
@@ -20,16 +21,3 @@ include "general/autostart.kdl"
 // Windowrules
 include "windowrules/spawn_at_workspace.kdl"
 include "windowrules/block_screencapture.kdl"
-
-//### Misc settings ###///
-
-// Path to save screenshots add and name setting
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-// Deactivate hotkey window at startup
-hotkey-overlay {
-    skip-at-startup
-}
-
-// Turn of titlebar for most applications
-prefer-no-csd

@@ -1,0 +1,10 @@
+// Path to save screenshots add and name setting
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Deactivate hotkey window at startup
+hotkey-overlay {
+    skip-at-startup
+}
+
+// Turn of titlebar for most applications
+// prefer-no-csd
