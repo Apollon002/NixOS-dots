@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  ...
 }:
 let
   cfg = config.userSettings.vesktop;
