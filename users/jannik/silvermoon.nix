@@ -9,6 +9,8 @@
     browsers.enable = [ "librewolf" ];
     browsers.librewolf.profile = "private";
 
+    ### File Browser ###
+    fileBrowser = "nemo";
     ### Terminal ###
     kitty.enable = true;
     shell.fish.enable = true;
