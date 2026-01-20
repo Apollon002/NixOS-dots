@@ -43,6 +43,7 @@ in
           open = true;
           nvidiaSettings = true;
           modesetting.enable = true;
+          powerManagement = false;
         };
 
         hardware.graphics.extraPackages = with pkgs; [
