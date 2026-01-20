@@ -35,7 +35,7 @@ in
         currentThemeCategory = "dynamic";
         customThemeFile = "";
         registryThemeVariants = { };
-        matugenScheme = "scheme-tonal-spot";
+        matugenScheme = "scheme-fidelity";
         runUserMatugenTemplates = true;
         matugenTargetMonitor = "";
         popupTransparency = 1;
