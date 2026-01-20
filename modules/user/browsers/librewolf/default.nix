@@ -17,6 +17,7 @@ let
         ublock-origin
         bitwarden
         sponsorblock
+        pywalfox
       ];
     };
     default = {
