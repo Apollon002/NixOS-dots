@@ -1,7 +1,8 @@
-{ config, lib }:
+{ config, lib, ... }:
 {
   config = lib.mkIf (config.systemSettings.greeter == "dankGreet") {
     services.displayManager.dms-greeter = {
+      enable = true;
       compositor = {
         name = "niri"; # Required. Can be also "hyprland" or "sway"
       };

@@ -24,7 +24,7 @@
 
     # Software
     bootloader = "grub";
-    greeter = "ly";
+    greeter = "dankGreet";
 
     # Fonts
     fonts.enable = true;
