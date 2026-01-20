@@ -6,9 +6,6 @@ in
 {
   xdg.configFile = lib.mkIf isEnabled {
     # Alle Dateien/Ordner aus repo/config/niri nach ~/.config/niri/
-    "niri".source = ./config;
-    "niri".recursive = true;
-
     "niri/config.kdl".text =
       builtins.readFile ./config/config.kdl
       + "\n"
@@ -20,10 +17,12 @@ in
       builtins.readFile ./config/general/keymaps.kdl
       + "\n"
       + lib.optionalString dmsEnabled ''
-          // dms keybinds
-          Mod+Space { spawn -sh "dms ipc call spotlight toggle"; }
-          Mod+L { spawn -sh "dms ipc call lock lock"; }
+        // dms keybinds
+        Mod+Space { spawn-sh "dms ipc call spotlight toggle"; }
+        Mod+L { spawn-sh "dms ipc call lock lock"; }
       ''
+      + "\n"
+      + "}";
     "niri/general/misc.kdl".text = builtins.readFile ./config/general/misc.kdl;
     "niri/general/outputs.kdl".text = builtins.readFile ./config/general/outputs.kdl;
     "niri/general/switch-events.kdl".text = builtins.readFile ./config/general/switch-events.kdl;

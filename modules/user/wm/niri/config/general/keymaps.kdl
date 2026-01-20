@@ -4,7 +4,7 @@ binds {
 	// clients
 	MOD+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 	Mod+B hotkey-overlay-title="Open Browser: librewolf" { spawn "librewolf"; }
-	
+
 	// session management
 	// Mod+L { TO BE IMPLEMENTED }
 	Mod+Shift+M { quit; }
@@ -18,10 +18,6 @@ binds {
 	Mod+Down  { focus-window-down; }
 	Mod+Up    { focus-window-up; }
 	Mod+Right { focus-column-right; }
-	Mod+H     { focus-column-left; }
-	Mod+J     { focus-window-down; }
-	Mod+K     { focus-window-up; }
-	Mod+L     { focus-column-right; }
 	// Switch focus between monitors
 	Mod+Shift+Left  { focus-monitor-left; }
 	Mod+Shift+Down  { focus-monitor-down; }
@@ -87,7 +83,7 @@ binds {
 	XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
 	XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
 	XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
-	// Brightness control	
+	// Brightness control
     	XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
     	XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
@@ -100,5 +96,3 @@ binds {
 	// The allow-inhibiting=false property can be applied to other binds as well,
 	// which ensures niri always processes them, even when an inhibitor is active.
 	Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-}
