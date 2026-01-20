@@ -41,6 +41,9 @@
 
     # Chat
     vesktop.enable = true;
+
+    # Music
+    spotify.enable = true;
   };
 
   # Git settings

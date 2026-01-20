@@ -13,7 +13,7 @@ in
 {
   config = lib.mkIf isEnabled {
 
-    home.packages = with pkgs; [
+    home.packages = [
       inputs.niri-scratchpad-flake.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
