@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   cfg = config.userSettings.spotify;
 in
@@ -6,6 +11,8 @@ in
   options.userSettings.spotify.enable = lib.mkEnableOption "Enable spotify";
 
   config = lib.mkIf cfg.enable {
-    programs.spotify-player.enable = true;
+    home.packages = with pkgs; [
+      spotify
+    ];
   };
 }
