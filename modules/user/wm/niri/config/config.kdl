@@ -17,6 +17,7 @@ include "general/keymaps.kdl"
 include "general/switch-events.kdl"
 include "general/workspaces.kdl"
 include "general/autostart.kdl"
+include "general/environment.kdl"
 
 // Windowrules
 include "windowrules/spawn_at_workspace.kdl"
