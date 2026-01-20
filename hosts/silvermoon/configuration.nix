@@ -36,6 +36,7 @@
     ### Gaming ###
     gaming.steam.enable = true;
     gaming.heroic.enable = true;
+    gaming.minecraft.enable = true;
   };
   system.stateVersion = "25.11";
 }
