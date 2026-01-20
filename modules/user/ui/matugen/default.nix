@@ -9,7 +9,7 @@ let
   dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
-  options.userSettings.ui.matugen.enable = lib.mkEnableOption "Activate Matugen";
+  options.userSettings.ui.matugen.enable = lib.mkEnableOption "Enable Matugen";
 
   config = lib.mkIf (cfg.enable || dmsEnabled) {
     home.packages = with pkgs; [ matugen ];
