@@ -33,7 +33,6 @@
     ui.dms.enable = true;
     ui.pywalfox.enable = true;
     ui.gtk.enable = true;
-    ui.qt.enable = true;
 
     ### Security ###
     bitwarden.enable = true;

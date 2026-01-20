@@ -27,6 +27,8 @@ in
     "niri/general/outputs.kdl".text = builtins.readFile ./config/general/outputs.kdl;
     "niri/general/switch-events.kdl".text = builtins.readFile ./config/general/switch-events.kdl;
     "niri/general/workspaces.kdl".text = builtins.readFile ./config/general/workspaces.kdl;
+    "niri/general/environment.kdl".text = builtins.readFile ./config/general/environment.kdl;
+
     # styling
     "niri/styling/animations.kdl".text = builtins.readFile ./config/styling/animations.kdl;
     "niri/styling/colors.kdl".text = builtins.readFile ./config/styling/colors.kdl;
