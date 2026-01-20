@@ -1,10 +1,10 @@
 { config, lib, ... }:
 let
-  cfg = config.userSettings.kitty;
+  cfg = config.userSettings.terminals.kitty;
   dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
-  options.userSettings.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
+  options.userSettings.terminals.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
 
   config = lib.mkIf cfg.enable {
     programs.kitty = {

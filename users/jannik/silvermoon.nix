@@ -12,7 +12,7 @@
     ### File Browser ###
     fileBrowser = "nemo";
     ### Terminal ###
-    kitty.enable = true;
+    terminals.kitty.enable = true;
     shell.fish.enable = true;
     starship.enable = true;
 
