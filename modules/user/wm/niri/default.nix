@@ -43,6 +43,7 @@ in
       builtins.readFile ./config/windowrules/block_screencapture.kdl;
     "niri/windowrules/spawn_at_workspace.kdl".text =
       builtins.readFile ./config/windowrules/spawn_at_workspace.kdl;
+    "niri/windowrules/floating.kdl".text = builtins.readFile ./config/windowrules/floating.kdl;
 
   };
 }
