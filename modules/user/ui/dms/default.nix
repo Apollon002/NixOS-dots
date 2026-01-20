@@ -140,7 +140,7 @@ in
         reverseScrolling = false;
         dwlShowAllTags = false;
         workspaceColorMode = "default";
-        workspaceOccupiedColorMode = "sec";
+        workspaceOccupiedColorMode = "none";
         workspaceUnfocusedColorMode = "default";
         workspaceUrgentColorMode = "default";
         workspaceFocusedBorderEnabled = false;
