@@ -22,3 +22,4 @@ include "general/environment.kdl"
 // Windowrules
 include "windowrules/spawn_at_workspace.kdl"
 include "windowrules/block_screencapture.kdl"
+include "windowrules/floating.kdl"
