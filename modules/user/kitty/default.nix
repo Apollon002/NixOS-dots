@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.userSettings.kitty;
+  dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
   options.userSettings.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
@@ -18,9 +19,18 @@ in
       shellIntegration.enableFishIntegration = true;
 
       settings = {
-        background_opacity = 0.85;
+        background_opacity = 0.8;
         background = "black";
       };
+      extraConfig =
+        if dmsEnabled then
+          ''
+            include dank-tabs.conf
+            include dank-theme.conf
+          ''
+
+        else
+          "";
     };
   };
 }
