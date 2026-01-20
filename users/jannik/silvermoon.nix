@@ -25,8 +25,9 @@
     editors.lsp.nix.enable = true;
     editors.formatter.nix.enable = true;
 
-    ### Symbols ###
-    symbols.bibataCursor.enable = true;
+    ### Icons ###
+    icons.bibataCursor.enable = true;
+    icons.papirus.enable = true;
 
     ### UI ###
     ui.dms.enable = true;

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.userSettings.symbols.bibataCursor;
+  cfg = config.userSettings.icons.bibataCursor;
 in
 {
-  options.userSettings.symbols.bibataCursor.enable = lib.mkEnableOption "Enable Bibata Cursors";
+  options.userSettings.icons.bibataCursor.enable = lib.mkEnableOption "Enable Bibata Cursors";
 
   config = lib.mkIf (cfg.enable) {
     home.packages = with pkgs; [
