@@ -16,10 +16,6 @@
     # Dank Material Shell
     dms.url = "github:AvengeMedia/DankMaterialShell";
     dms.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Niri scratchpad
-    niri-scratchpad-flake.url = "github:gvolpe/niri-scratchpad";
-    niri-scratchpad-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

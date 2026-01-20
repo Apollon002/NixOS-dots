@@ -1,8 +1,6 @@
 {
   config,
-  pkgs,
   lib,
-  inputs,
   ...
 }:
 let
@@ -12,10 +10,6 @@ let
 in
 {
   config = lib.mkIf isEnabled {
-
-    home.packages = [
-      inputs.niri-scratchpad-flake.packages.${pkgs.stdenv.hostPlatform.system}.default
-    ];
 
     xdg.configFile = {
       # Alle Dateien/Ordner aus repo/config/niri nach ~/.config/niri/

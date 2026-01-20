@@ -21,4 +21,8 @@ workspace "chat" {
   }
 }
 
-workspace "scratch"
+workspace "music" {
+    layout {
+        default-column-width { proportion 1.0; }
+    }
+}
