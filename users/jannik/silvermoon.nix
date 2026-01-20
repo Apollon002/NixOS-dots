@@ -49,7 +49,8 @@
     spotify.enable = true;
 
     ### Office ###
-    onlyOffice.enable = true;
+    office.onlyOffice.enable = true;
+    office.teams.enable = true;
   };
 
   # Git settings

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.userSettings.onlyOffice;
+  cfg = config.userSettings.office.onlyOffice;
 in
 {
-  options.userSettings.onlyOffice.enable = lib.mkEnableOption "Install Only-Office";
+  options.userSettings.office.onlyOffice.enable = lib.mkEnableOption "Install Only-Office";
 
   config = lib.mkIf cfg.enable {
 
