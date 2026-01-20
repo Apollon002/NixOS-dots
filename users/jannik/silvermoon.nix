@@ -14,7 +14,7 @@
     ### Terminal ###
     terminals.kitty.enable = true;
     shell.fish.enable = true;
-    starship.enable = true;
+    programs.starship.enable = true;
 
     ### Fonts ###
     fonts.firaNerd.enable = true;
@@ -40,13 +40,13 @@
     dev.typst.enable = true;
     dev.latex.enable = false;
     ### Security ###
-    bitwarden.enable = true;
+    programs.bitwarden.enable = true;
 
     ### Chat ###
-    vesktop.enable = true;
+    programs.vesktop.enable = true;
 
     ### Music ###
-    spotify.enable = true;
+    programs.spotify.enable = true;
 
     ### Office ###
     office.onlyOffice.enable = true;

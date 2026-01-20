@@ -5,10 +5,11 @@
   ...
 }:
 let
-  cfg = config.userSettings.bitwarden;
+  cfg = config.userSettings.programs.bitwarden;
 in
 {
-  options.userSettings.bitwarden.enable = lib.mkEnableOption "Enable Bitwarden Password-Manager";
+  options.userSettings.programs.bitwarden.enable =
+    lib.mkEnableOption "Enable Bitwarden Password-Manager";
 
   config = lib.mkIf (cfg.enable) {
     home.packages = with pkgs; [

@@ -1,14 +1,13 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
 let
-  cfg = config.userSettings.vesktop;
+  cfg = config.userSettings.programs.vesktop;
 in
 {
-  options.userSettings.vesktop.enable = lib.mkEnableOption "Enable vesktop (Discord client)";
+  options.userSettings.programs.vesktop.enable = lib.mkEnableOption "Enable vesktop (Discord client)";
 
   config = lib.mkIf (cfg.enable) {
     programs.vesktop.enable = true;

@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.userSettings.starship;
+  cfg = config.userSettings.programs.starship;
   dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
