@@ -5,9 +5,11 @@
 }:
 let
   isEnabled = builtins.elem "zed" (config.userSettings.editors.enable or [ ]);
+  dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
   config = lib.mkIf isEnabled {
+    # Import matugen theme if DankMaterialShell is enabled
     programs.zed-editor.enable = true;
 
     ### Extensions ###
@@ -19,7 +21,7 @@ in
 
     programs.zed-editor.userSettings = {
       ### Theme settings ###
-      theme = "Aura Soft Dark";
+      theme = if dmsEnabled then "Matugen Dark" else "Aura Soft Dark";
       icon_theme = "Catppuccin Latte";
       theme_overrides = {
         "Aura Soft Dark" = {
