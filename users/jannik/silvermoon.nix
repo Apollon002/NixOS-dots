@@ -37,7 +37,8 @@
     ui.gtk.enable = true;
 
     ### Dev ###
-    dev.latex.enable = true;
+    dev.typst.enable = true;
+    dev.latex.enable = false;
     ### Security ###
     bitwarden.enable = true;
 
