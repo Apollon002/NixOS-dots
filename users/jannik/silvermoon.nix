@@ -36,13 +36,15 @@
     ui.pywalfox.enable = true;
     ui.gtk.enable = true;
 
+    ### Dev ###
+    dev.latex.enable = true;
     ### Security ###
     bitwarden.enable = true;
 
-    # Chat
+    ### Chat ###
     vesktop.enable = true;
 
-    # Music
+    ### Music ###
     spotify.enable = true;
   };
 
