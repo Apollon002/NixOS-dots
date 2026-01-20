@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  ...
 }:
 let
   cfg = config.userSettings.ui.pywalfox;
@@ -11,7 +12,7 @@ in
     lib.mkEnableOption "Enable pywalfox for Firefox/Thunderbird theming";
 
   config = lib.mkIf (cfg.enable) {
-    home-packages = with pkgs; [
+    home.packages = with pkgs; [
       pywalfox-native
     ];
   };
