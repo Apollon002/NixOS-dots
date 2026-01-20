@@ -8,11 +8,10 @@ let
   cfg = config.userSettings.vesktop;
 in
 {
-  options.userSettings.vesktop.enable = lib.mkOption "Enable vesktop (Discord client)";
+  options.userSettings.vesktop.enable = lib.mkEnableOption "Enable vesktop (Discord client)";
 
-  config = (cfg.enable) {
-    home.packages = with pkgs; [
-      vesktop
-    ];
+  config = lib.mkIf (cfg.enable) {
+    programs.vesktop.enable = true;
+    programs.vesktop.vencord.settings.enabledThemes = [ "dank-discord.css" ];
   };
 }
