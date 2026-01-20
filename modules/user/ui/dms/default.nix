@@ -169,7 +169,7 @@ in
           };
           scratch = {
             type = "icon";
-            value = "menu";
+            value = "music_note";
           };
         };
         waveProgressEnabled = true;
