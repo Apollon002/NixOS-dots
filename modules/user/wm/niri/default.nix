@@ -2,6 +2,7 @@
 let
   isEnabled = builtins.elem "niri" (config.userSettings.wm.enable or [ ]);
   dmsEnabled = config.userSettings.ui.dms.enable;
+  nemoEnabled = config.userSettings.fileBrowser == "nemo";
 in
 {
   xdg.configFile = lib.mkIf isEnabled {
@@ -21,6 +22,8 @@ in
         Mod+Space { spawn-sh "dms ipc call spotlight toggle"; }
         Mod+L { spawn-sh "dms ipc call lock lock"; }
       ''
+      + "\n"
+      + lib.optionalString nemoEnabled ''Mod+E {spawn "nemo";}''
       + "\n"
       + "}";
     "niri/general/misc.kdl".text = builtins.readFile ./config/general/misc.kdl;
