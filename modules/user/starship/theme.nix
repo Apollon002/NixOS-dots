@@ -1,9 +1,10 @@
 { config, lib, ... }:
 let
   cfg = config.userSettings.starship;
+  dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
-  config = lib.mkIf (cfg.enable) {
+  config = lib.mkIf (cfg.enable && !dmsEnabled) {
     programs.starship.settings = {
       format = lib.concatStrings [
         "[](color_bar1)"

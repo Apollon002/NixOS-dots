@@ -21,6 +21,10 @@ in
         [templates.mytemplate]
         input_path = '~/.config/matugen/templates/zed-colors.json'
         output_path = '~/.config/zed/themes/matugen.json'
+
+        [templates.starship]
+        input_path = '~/.config/matugen/templates/starship-colors.toml'
+        output_path = '~/.config/starship.toml'
       '';
     };
   };
