@@ -47,6 +47,9 @@
 
     ### Music ###
     spotify.enable = true;
+
+    ### Office ###
+    onlyOffice.enable = true;
   };
 
   # Git settings
