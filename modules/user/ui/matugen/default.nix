@@ -25,5 +25,5 @@ in
     };
   };
   # Import themes
-  imports = [ "./templates.nix" ];
+  imports = [ ./templates.nix ];
 }

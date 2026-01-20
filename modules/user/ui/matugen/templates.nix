@@ -3,7 +3,6 @@
 {
   # Zed editor
   xdg.configFile."matugen/templates/zed-colors.json".text = ''
-    # Zed editor
     {
         "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
         "name": "Matugen",

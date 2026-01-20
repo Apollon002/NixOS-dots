@@ -21,7 +21,7 @@ in
 
     programs.zed-editor.userSettings = {
       ### Theme settings ###
-      theme = if dmsEnabled then "Matugen Dark" else "Aura Soft Dark";
+      theme = "Aura Soft Dark";
       icon_theme = "Catppuccin Latte";
       theme_overrides = {
         "Aura Soft Dark" = {
