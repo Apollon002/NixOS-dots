@@ -14,6 +14,8 @@ in
     home.packages = with pkgs; [
       # Theme
       adw-gtk3
+
+      nwg-look
     ];
 
     gtk = {
@@ -33,6 +35,10 @@ in
         name = "Bibata-Modern-Classic";
         package = pkgs.bibata-cursors;
         size = 24;
+      };
+
+      gtk3.extraConfig = {
+        "gtk-application-prefer-dark-theme" = 1;
       };
     };
   };
