@@ -167,7 +167,7 @@ in
             type = "icon";
             value = "chat";
           };
-          scratch = {
+          music = {
             type = "icon";
             value = "music_note";
           };
