@@ -19,11 +19,19 @@ in
     fonts.fontconfig.enable = true;
     # onlyoffice has trouble with symlinks: https://github.com/ONLYOFFICE/DocumentServer/issues/1859
     home.activation.enableFonts = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      rm -rf ~/.local/share/fonts 2>/dev/null
-      mkdir -p ~/.local/share/fonts
-      cp ${pkgs.corefonts}/share/fonts/truetype/* ~/.local/share/fonts/
-      chmod 544 ~/.local/share/fonts
-      chmod 444 ~/.local/share/fonts/*
+      set -eu
+
+      fonts_dir="$HOME/.local/share/fonts"
+      rm -rf "$fonts_dir" 2>/dev/null || true
+      mkdir -p "$fonts_dir"
+
+      src="${pkgs.corefonts}/share/fonts/truetype"
+      if [ -d "$src" ]; then
+        cp -f "$src"/* "$fonts_dir"/ 2>/dev/null || true
+      fi
+
+      chmod 755 "$fonts_dir" || true
+      chmod 644 "$fonts_dir"/* 2>/dev/null || true
     '';
   };
 }
