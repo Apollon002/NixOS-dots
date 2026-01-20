@@ -38,6 +38,9 @@
 
     ### Security ###
     bitwarden.enable = true;
+
+    # Chat
+    vesktop.enable = true;
   };
 
   # Git settings
