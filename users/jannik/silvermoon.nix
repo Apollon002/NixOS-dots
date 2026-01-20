@@ -32,6 +32,7 @@
     ### UI ###
     ui.dms.enable = true;
     ui.pywalfox.enable = true;
+    ui.gtk.enable = true;
 
     ### Security ###
     bitwarden.enable = true;
