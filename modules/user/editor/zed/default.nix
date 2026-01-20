@@ -5,7 +5,7 @@
 }:
 let
   isEnabled = builtins.elem "zed" (config.userSettings.editors.enable or [ ]);
-  dmsEnabled = config.userSettings.ui.dms.enable;
+
 in
 {
   config = lib.mkIf isEnabled {
