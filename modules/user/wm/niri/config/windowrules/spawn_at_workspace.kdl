@@ -12,3 +12,8 @@ window-rule {
     match app-id="Spotify"
     open-on-workspace "music"
 }
+
+window-rule {
+    match app-id="steam"
+    open-on-workspace "gaming"
+}

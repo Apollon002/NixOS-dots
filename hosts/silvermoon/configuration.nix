@@ -32,6 +32,9 @@
     # Security
     gkr.enable = true;
     kdePolkit.enable = true;
+
+    ### Gaming ###
+    gaming.steam.enable = true;
   };
   system.stateVersion = "25.11";
 }
