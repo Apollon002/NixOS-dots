@@ -67,6 +67,7 @@ in
       languages = {
         # Nix
         Nix = {
+          "tab_size" = 2;
           formatter = {
             external = {
               "command" = "nixfmt";

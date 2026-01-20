@@ -1,8 +1,6 @@
-# Reads enabled browsers and imports all browser modules
-{ lib, ... }:
+# Imports all window manager configs
+{ ... }:
 let
-  availableWM = [ "niri" ];
-
   # for importing all submodules
   entries = builtins.readDir ./.;
 
@@ -12,12 +10,6 @@ let
 
 in
 {
-  options.userSettings.wm.enable = lib.mkOption {
-    description = "Window Manager configs to activate for this user";
-    type = lib.types.listOf (lib.types.enum availableWM);
-    default = [ ];
-  };
-
   # Import submodules
   imports = importsFromSubdirs;
 }

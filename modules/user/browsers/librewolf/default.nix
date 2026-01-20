@@ -6,8 +6,7 @@
   ...
 }:
 let
-  isEnabled = builtins.elem "librewolf" (config.userSettings.browsers.enable or [ ]);
-  profile = config.userSettings.browsers.librewolf.profile;
+  cfg = config.userSettings.browsers.librewolf;
 
   # Profiles
   profileMap = {
@@ -26,15 +25,17 @@ let
   };
 in
 {
-  options.userSettings.browsers.librewolf.profile = lib.mkOption {
-    description = "Profile for librewolf";
-    type = lib.types.enum (builtins.attrNames profileMap);
-    default = "default";
-    example = "private";
+  options.userSettings.browsers.librewolf = {
+    enable = lib.mkEnableOption "Enable librewolf ";
+    profile = lib.mkOption {
+      description = "Profile for librewolf";
+      type = lib.types.enum (builtins.attrNames profileMap);
+      default = "default";
+      example = "private";
+    };
   };
-
-  config = lib.mkIf isEnabled {
+  config = lib.mkIf cfg.enable {
     programs.librewolf.enable = true;
-    programs.librewolf.profiles.${profile} = profileMap.${profile};
+    programs.librewolf.profiles.${cfg.profile} = profileMap.${cfg.profile};
   };
 }

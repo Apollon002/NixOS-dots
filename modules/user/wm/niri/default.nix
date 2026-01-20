@@ -4,12 +4,14 @@
   ...
 }:
 let
-  isEnabled = builtins.elem "niri" (config.userSettings.wm.enable or [ ]);
+  cfg = config.userSettings.wmConfig.niri;
   dmsEnabled = config.userSettings.ui.dms.enable;
   nemoEnabled = config.userSettings.fileBrowser == "nemo";
 in
 {
-  config = lib.mkIf isEnabled {
+  options.userSettings.wmConfig.niri.enable = lib.mkEnableOption "Enable niri configuration";
+
+  config = lib.mkIf cfg.enable {
 
     xdg.configFile = {
       # Alle Dateien/Ordner aus repo/config/niri nach ~/.config/niri/

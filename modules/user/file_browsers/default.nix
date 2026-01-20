@@ -11,9 +11,10 @@ in
   options.userSettings.fileBrowser = lib.mkOption {
     description = "File browser to use";
     type = lib.types.enum [
+      "none"
       "nemo"
     ];
-    default = "nemo";
+    default = "none";
     example = "nemo";
   };
 

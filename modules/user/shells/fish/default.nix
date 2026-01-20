@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.userSettings.shell.fish;
+  cfg = config.userSettings.shells.fish;
 in
 {
-  options.userSettings.shell.fish.enable = lib.mkEnableOption "Enables Fish user configuration";
+  options.userSettings.shells.fish.enable = lib.mkEnableOption "Enables Fish user configuration";
 
   config = lib.mkIf (cfg.enable) {
 

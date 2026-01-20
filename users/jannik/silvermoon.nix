@@ -2,57 +2,85 @@
 
 {
   userSettings = {
-    ### Window Manager ###
-    wm.enable = [ "niri" ];
-
     ### Browser ###
-    browsers.enable = [ "librewolf" ];
-    browsers.librewolf.profile = "private";
+    browsers = {
+      librewolf = {
+        enable = true;
+        profile = "private";
+      };
+    };
 
-    ### File Browser ###
-    fileBrowser = "nemo";
-    ### Terminal ###
-    terminals.kitty.enable = true;
-    shell.fish.enable = true;
-    programs.starship.enable = true;
-
-    ### Fonts ###
-    fonts.firaNerd.enable = true;
-    fonts.roboto.enable = true;
+    ### Development ###
+    dev = {
+      typst.enable = true;
+      latex.enable = false;
+    };
 
     ### Editor ###
-    editors.enable = [ "zed" ];
-    # Languages #
-    # Nix
-    editors.lsp.nix.enable = true;
-    editors.formatter.nix.enable = true;
+    editors = {
+      # Editors
+      enable = [ "zed" ];
+      # LSP's
+      lsp = {
+        nix.enable = true;
+      };
+      # Formatters
+      formatter = {
+        nix.enable = true;
+      };
+    };
+
+    ### File Browser ###
+    fileBrowser = "nemo"; # Only one at a time
+
+    ### Fonts ###
+    fonts = {
+      firaNerd.enable = true;
+      roboto.enable = true;
+    };
 
     ### Icons ###
-    icons.bibataCursor.enable = true;
-    icons.papirus.enable = true;
-
-    ### UI ###
-    ui.dms.enable = true;
-    ui.pywalfox.enable = true;
-    ui.gtk.enable = true;
-
-    ### Dev ###
-    dev.typst.enable = true;
-    dev.latex.enable = false;
-    ### Security ###
-    programs.bitwarden.enable = true;
-
-    ### Chat ###
-    programs.vesktop.enable = true;
-
-    ### Music ###
-    programs.spotify.enable = true;
+    icons = {
+      papirus.enable = true;
+      bibataCursor.enable = true;
+    };
 
     ### Office ###
-    office.onlyOffice.enable = true;
-    office.teams.enable = true;
-  };
+    office = {
+      onlyOffice.enable = true;
+      teams.enable = true;
+    };
 
+    ### Programs ###
+    programs = {
+      bitwarden.enable = true;
+      spotify.enable = true;
+      starship.enable = true;
+      vesktop.enable = true;
+    };
+
+    ### Shell config ###
+    shells = {
+      fish.enable = true;
+    };
+
+    ### Terminals ###
+    terminals = {
+      kitty.enable = true;
+    };
+
+    ### UI ###
+    ui = {
+      dms.enable = true;
+      pywalfox.enable = true;
+      gtk.enable = true;
+    };
+
+    ### Window-Manager config ###
+    wmConfig = {
+      niri.enable = true;
+    };
+  };
   # Git settings
   programs.git = {
     enable = true;
