@@ -53,6 +53,7 @@ programs
 - bitwarden
 - evince
 - ghumb
+- megacmd (with autostart option)
 - microfetch
 - simple-scan
 - spotify
