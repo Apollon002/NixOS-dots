@@ -73,7 +73,7 @@
   };
 
   # specify shells for every user
-  users.users.jannik.useDefaultShell = pkgs.fish;
+  users.users.jannik.shell = pkgs.fish;
 
   system.stateVersion = "25.11";
 }

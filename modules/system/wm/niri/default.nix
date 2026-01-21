@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.systemSettings.wm.niri.enable;
+  cfg = config.systemSettings.wm.niri;
 in
 {
   options.systemSettings.wm.niri.enable = lib.mkEnableOption "Install the niri window-manager";

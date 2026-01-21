@@ -8,7 +8,7 @@ let
   cfg = config.systemSettings.security.kdePolkit;
 in
 {
-  options.systemSettings.kdePolkit.enable = lib.mkEnableOption "Enable KDE Polkit Agent";
+  options.systemSettings.security.kdePolkit.enable = lib.mkEnableOption "Enable KDE Polkit Agent";
 
   config = lib.mkIf cfg.enable {
 

@@ -12,5 +12,6 @@ in
         					set fish_greeting
         				'';
     };
+    documentation.man.generateCaches = false; # To fix long build times
   };
 }
