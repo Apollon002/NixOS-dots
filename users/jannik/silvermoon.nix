@@ -65,7 +65,7 @@
       simpleScan.enable = true;
       megacmd = {
         enable = true;
-        autostart = false;
+        autostart = true;
       };
     };
 
