@@ -72,7 +72,9 @@
     };
 
     ### Printing ###
-    printing.enable = true;
+    printing = {
+      cups.enable = true;
+    };
   };
   ### PRINTER DRIVERS ###
   # If needed add additional printer drivers here
