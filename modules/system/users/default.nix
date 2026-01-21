@@ -31,7 +31,7 @@ in
         value = {
           isNormalUser = true;
           createHome = true;
-
+          initialPassword = "12345";
           extraGroups = [
             "networkmanager"
             "input"
