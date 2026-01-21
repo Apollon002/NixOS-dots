@@ -1,26 +1,20 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
+{ lib, ... }:
 let
-  availableKernels = [
-    "linux"
-    "zen"
-  ];
-  userSelect = config.systemSettings.kernel;
+  entries = builtins.readDir ./.;
+  subdirs = builtins.filter (name: entries.${name} == "directory") (builtins.attrNames entries);
+
+  importsFromSubdirs = map (name: ./. + "/${name}/default.nix") subdirs;
 in
 {
+  imports = importsFromSubdirs;
+
   options.systemSettings.kernel = lib.mkOption {
     description = "Kernel to use";
-    type = lib.types.enum availableKernels;
-    example = "zen";
+    type = lib.types.enum [
+      "linux"
+      "zen"
+    ];
     default = "linux";
-  };
-
-  config = {
-    boot.kernelPackages = if userSelect == "zen" then pkgs.linuxPackages_zen else pkgs.linuxPackages;
+    example = "zen";
   };
 }

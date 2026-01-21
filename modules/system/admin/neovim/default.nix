@@ -4,13 +4,15 @@
   pkgs,
   ...
 }:
-
+let
+  cfg = config.systemSettings.admin.neovim.enable;
+in
 {
-  options.systemSettings.neovim.enable = lib.mkEnableOption "Enable neovim" // {
+  options.systemSettings.admin.neovim.enable = lib.mkEnableOption "Enable neovim" // {
     default = true;
   };
 
-  config = lib.mkIf config.systemSettings.neovim.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       neovim
     ];

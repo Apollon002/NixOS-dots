@@ -4,11 +4,13 @@
   lib,
   ...
 }:
-
+let
+  cfg = config.systemSettings.wm.niri.enable;
+in
 {
-  options.systemSettings.niri.enable = lib.mkEnableOption "Enable niri wm";
+  options.systemSettings.wm.niri.enable = lib.mkEnableOption "Install the niri window-manager";
 
-  config = lib.mkIf (config.systemSettings.niri.enable) {
+  config = lib.mkIf cfg.enable {
     programs.niri.enable = true;
     # Dependencies
     environment.systemPackages = with pkgs; [

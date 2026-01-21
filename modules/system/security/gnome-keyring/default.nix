@@ -1,9 +1,11 @@
 { config, lib, ... }:
-
+let
+  cfg = config.systemSettings.security.gkr;
+in
 {
-  options.systemSettings.gkr.enable = lib.mkEnableOption "Enable Gnome-Keyring";
+  options.systemSettings.security.gkr.enable = lib.mkEnableOption "Enable Gnome-Keyring";
 
-  config = lib.mkIf (config.systemSettings.gkr.enable) {
+  config = lib.mkIf cfg.enable {
     services.gnome.gnome-keyring.enable = true;
   };
 }

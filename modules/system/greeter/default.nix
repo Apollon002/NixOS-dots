@@ -10,11 +10,13 @@ in
 {
   options.systemSettings.greeter = lib.mkOption {
     description = "Display-Manager to use";
-    type = lib.types.enum [
-      "ly"
-      "dankGreet"
-    ];
-    default = "ly";
+    type = lib.types.nullOr (
+      lib.types.enum [
+        "ly"
+        "dankGreet"
+      ]
+    );
+    default = null;
     example = "dankGreet";
   };
 

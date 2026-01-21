@@ -4,11 +4,13 @@
   lib,
   ...
 }:
-
+let
+  cfg = config.systemSettings.security.kdePolkit;
+in
 {
   options.systemSettings.kdePolkit.enable = lib.mkEnableOption "Enable KDE Polkit Agent";
 
-  config = lib.mkIf (config.systemSettings.kdePolkit.enable) {
+  config = lib.mkIf cfg.enable {
 
     security.polkit.enable = true;
 

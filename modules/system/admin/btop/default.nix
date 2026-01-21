@@ -4,13 +4,15 @@
   pkgs,
   ...
 }:
-
+let
+  cfg = config.systemSettings.admin.btop;
+in
 {
-  options.systemSettings.btop.enable = lib.mkEnableOption "Enable btop system monitor" // {
+  options.systemSettings.admin.btop.enable = lib.mkEnableOption "Enable btop system monitor" // {
     default = true;
   };
 
-  config = lib.mkIf config.systemSettings.btop.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       btop
     ];

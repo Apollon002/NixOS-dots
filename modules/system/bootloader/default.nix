@@ -1,43 +1,27 @@
-{ config, lib, ... }:
+{ lib, ... }:
 let
-  availableBootloaders = [
-    "grub"
-    "systemdboot"
-  ];
-  userSelect = config.systemSettings.bootloader;
+  entries = builtins.readDir ./.;
+
+  subdirs = builtins.filter (name: entries.${name} == "directory") (builtins.attrNames entries);
+
+  importsFromSubdirs = map (name: ./. + "/${name}/default.nix") subdirs;
 in
 {
   options.systemSettings.bootloader = lib.mkOption {
     description = "Bootloader to use";
-    type = lib.types.enum availableBootloaders;
-    example = "systemdboot";
+    type = lib.types.enum [
+      "grub"
+      "systemdboot"
+    ];
     default = "grub";
+    example = "systemdboot";
   };
 
-  config = lib.mkMerge [
-    {
-      boot.loader.efi = {
-        efiSysMountPoint = "/boot";
-        canTouchEfiVariables = (userSelect == "systemdboot");
-      };
-    }
+  config = {
+    boot.loader.efi.efiSysMountPoint = "/boot";
+    boot.loader.timeout = 5;
 
-    { boot.loader.timeout = 5; }
+  };
 
-    (lib.mkIf (userSelect == "grub") {
-      boot.loader.grub = {
-        enable = true;
-        devices = [ "nodev" ];
-        efiSupport = true;
-        useOSProber = true;
-        efiInstallAsRemovable = true;
-        configurationLimit = 5;
-      };
-    })
-
-    (lib.mkIf (userSelect == "systemdboot") {
-      boot.loader.systemd-boot.enable = true;
-      boot.loader.systemd-boot.configurationLimit = 5;
-    })
-  ];
+  imports = importsFromSubdirs;
 }

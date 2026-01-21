@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   networking.hostName = "silvermoon";
@@ -6,37 +6,74 @@
   ### activate modules ###
   # Pipewire, NetworkManager, Neovim, btop enabled by default
   systemSettings = {
-    # Create users
+    ### Create users ###
     users = [ "jannik" ];
     sudoUsers = [ "jannik" ];
 
-    # Shell
-    shell = "fish";
+    ### Admin ###
+    admin = {
+      btop.enable = true;
+      neovim.enable = true;
+    };
 
-    # Window-Manager
-    niri.enable = true;
+    ### Audio ###
+    audio = {
+      pipewire.enable = true;
+    };
 
-    # Hardware
-    kernel = "zen";
+    ### Bluetooth ###
     bluetooth.enable = true;
-    graphics = "nvidia";
-    powerProfiles.enable = true;
 
-    # Software
+    ### Bootloader ###
     bootloader = "grub";
-    greeter = "dankGreet";
 
-    # Fonts
+    ### Fonts ###
     fonts.enable = true;
 
-    # Security
-    gkr.enable = true;
-    kdePolkit.enable = true;
-
     ### Gaming ###
-    gaming.steam.enable = true;
-    gaming.heroic.enable = true;
-    gaming.minecraft.enable = true;
+    gaming = {
+      heroic.enable = true;
+      minecraft.enable = true;
+      steam.enable = true;
+    };
+
+    ### Graphics driver ###
+    graphics = "nvidia";
+
+    ### Greeter ###
+    greeter = "dankGreet";
+
+    ### Kernels ###
+    kernel = "zen";
+
+    ### network ###
+    network = {
+      networkManager.enable = true;
+    };
+
+    ### Powerprofiles ###
+    powerProfiles.enable = false;
+
+    ### Security ###
+    security = {
+      gkr.enable = true;
+      kdePolkit.enable = true;
+    };
+
+    ### Shells ###
+    shells = {
+      fish.enable = true;
+      zsh.enable = false;
+    };
+
+    ### Window-Manager ###
+    wm = {
+      niri.enable = true;
+    };
   };
+
+  # specify shells for every user
+  users.users.jannik.useDefaultShell = pkgs.fish;
+
   system.stateVersion = "25.11";
 }
