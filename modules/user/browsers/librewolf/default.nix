@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgsStable,
   lib,
   inputs,
   ...
@@ -36,6 +37,7 @@ in
   };
   config = lib.mkIf cfg.enable {
     programs.librewolf.enable = true;
+    programs.librewolf.package = pkgsStable.librewolf;
     programs.librewolf.profiles.${cfg.profile} = profileMap.${cfg.profile};
   };
 }
