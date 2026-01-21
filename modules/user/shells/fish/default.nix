@@ -14,6 +14,11 @@ in
         				set fish_greeting
         				starship init fish | source
         				export SSH_AUTH_SOCK=/home/jannik/.bitwarden-ssh-agent.sock
+                if set -q KITTY_WINDOW_ID
+                    if type -q microfetch
+                        microfetch
+                    end
+                end
         			'';
     };
   };

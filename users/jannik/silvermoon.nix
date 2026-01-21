@@ -60,6 +60,7 @@
       evince.enable = true;
       amberol.enable = true;
       gthumb.enable = true;
+      microfetch.enable = true;
     };
 
     ### Shell config ###
