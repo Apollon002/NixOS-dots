@@ -533,7 +533,7 @@ in
       installPywalfox = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         set -u
         touch ~/.config/niri/dms/colors.kdl
-        mkdir ~/.cache/wal
+        mkdir -p ~/.cache/wal
         ln -sfn ~/.cache/wal/dank-pywalfox.json ~/.cache/wal/colors.json 2>/dev/null
       '';
     };
