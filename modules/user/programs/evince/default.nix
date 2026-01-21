@@ -12,6 +12,8 @@ in
     lib.mkEnableOption "Enable evince, GNOMES's pdf reader";
 
   config = lib.mkIf cfg.enable {
-    programs.evince.enable = true;
+    home.packages = with pkgs; [
+      evince
+    ];
   };
 }
