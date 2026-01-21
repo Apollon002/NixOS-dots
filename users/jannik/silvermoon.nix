@@ -58,6 +58,7 @@
       starship.enable = true;
       vesktop.enable = true;
       evince.enable = true;
+      amberol.enable = true;
     };
 
     ### Shell config ###
