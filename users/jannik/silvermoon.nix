@@ -57,6 +57,7 @@
       spotify.enable = true;
       starship.enable = true;
       vesktop.enable = true;
+      evince.enable = true;
     };
 
     ### Shell config ###
