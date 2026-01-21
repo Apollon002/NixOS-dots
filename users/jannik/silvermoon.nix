@@ -61,6 +61,7 @@
       amberol.enable = true;
       gthumb.enable = true;
       microfetch.enable = true;
+      simpleScan.enable = true;
     };
 
     ### Shell config ###
