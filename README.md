@@ -2,7 +2,7 @@
 
 Visit this repository online:
 
-[GITHUB](https://github.com/Apollon002/NixOS-dots)
+[GitHub](https://github.com/Apollon002/NixOS-dots)
 
 ## Explanation
 This repository contains my NixOS configurations. You are free to use them.
