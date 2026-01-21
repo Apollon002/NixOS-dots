@@ -81,7 +81,7 @@ shells
 - zsh
 
 users
-- System user and group definitions
+- System user and group definitions **CHANGE INITIAL PASSWORD RIGHT AFTER CREATION, ITS PUBLIC!**
 
 wm
 - Window manager / compositor configuration
