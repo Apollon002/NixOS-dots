@@ -70,7 +70,13 @@
     wm = {
       niri.enable = true;
     };
+
+    ### Printing ###
+    printing.enable = true;
   };
+  ### PRINTER DRIVERS ###
+  # If needed add additional printer drivers here
+  services.printing.drivers = [ ];
 
   # specify shells for every user
   users.users.jannik.shell = pkgs.fish;
