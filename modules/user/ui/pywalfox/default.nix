@@ -15,12 +15,5 @@ in
     home.packages = with pkgs; [
       pywalfox-native
     ];
-    home.activation = {
-      installPywalfox = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        set -u
-        mkdir -p ~/.cache/wal
-        ln -sfn ~/.cache/wal/dank-pywalfox.json ~/.cache/wal/colors.json 2>/dev/null
-      '';
-    };
   };
 }
