@@ -108,7 +108,6 @@
     BROWSER = "librewolf";
     TERMINAL = "kitty";
 
-    QT_QPA_PLATFORMTHEME = "gnome";
   };
 
   home.stateVersion = "25.11";
