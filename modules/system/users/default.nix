@@ -38,8 +38,12 @@ in
             "dialout"
             "video"
             "render"
+            "lp"
           ]
-          ++ lib.optionals (lib.elem user cfg.sudoUsers) [ "wheel" ];
+          ++ lib.optionals (lib.elem user cfg.sudoUsers) [
+            "wheel"
+            "lpadmin"
+          ];
         };
       }) cfg.users
     );
