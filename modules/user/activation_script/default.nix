@@ -1,7 +1,4 @@
-{ config, lib, ... };
-let
-  dmsEnabled = config.userSettings.ui.dms.enable;
-in
+{ lib, ... };
 # Ensures some emtpy folders & files are created so home-manager doesn't cancel the build process
 home.activation = {
   installPywalfox = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
