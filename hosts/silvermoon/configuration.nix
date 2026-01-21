@@ -74,6 +74,7 @@
     ### Printing ###
     printing = {
       cups.enable = true;
+      sane.enable = true;
     };
   };
   ### PRINTER DRIVERS ###

@@ -39,6 +39,7 @@ in
             "video"
             "render"
             "lp"
+            "scanner"
           ]
           ++ lib.optionals (lib.elem user cfg.sudoUsers) [
             "wheel"
