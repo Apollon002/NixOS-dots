@@ -528,5 +528,12 @@ in
         configVersion = 5;
       };
     };
+    home.activation.mkEmptyFiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      set -u
+      mkdir -p ~/.config/niri/dms
+      touch ~/.config/niri/dms/colors.kdl
+      mkdir -p ~/.cache/wal
+      ln -sfn ~/.cache/wal/dank-pywalfox.json ~/.cache/wal/colors.json 2>/dev/null
+    '';
   };
 }
