@@ -4,11 +4,13 @@
   ...
 }:
 let
-  isEnabled = builtins.elem "zed" (config.userSettings.editors.enable or [ ]);
+  cfg = config.userSettings.editors.zed;
 
 in
 {
-  config = lib.mkIf isEnabled {
+  options.userSettings.editors.zed.enable = lib.mkEnableOption "Install and configure Zed-Editor";
+
+  config = lib.mkIf cfg.enable {
     # Import matugen theme if DankMaterialShell is enabled
     programs.zed-editor.enable = true;
 

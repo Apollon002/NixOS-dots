@@ -19,7 +19,8 @@
     ### Editor ###
     editors = {
       # Editors
-      enable = [ "zed" ];
+      zed.enable = true;
+
       # LSP's
       lsp = {
         nix.enable = true;

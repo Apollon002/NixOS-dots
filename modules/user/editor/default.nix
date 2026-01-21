@@ -1,8 +1,6 @@
-# Reads enabled editors and imports all editor modules
-{ lib, ... }:
+# Imports all editor modules
+{ ... }:
 let
-  availableEditors = [ "zed" ];
-
   # for importing all submodules
   entries = builtins.readDir ./.;
 
@@ -12,12 +10,6 @@ let
 
 in
 {
-  options.userSettings.editors.enable = lib.mkOption {
-    description = "Editors to activate for this user";
-    type = lib.types.listOf (lib.types.enum availableEditors);
-    default = [ ];
-  };
-
   # Import submodules
   imports = importsFromSubdirs;
 }
