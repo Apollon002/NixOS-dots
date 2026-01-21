@@ -86,7 +86,7 @@
   services.printing.drivers = [ ];
 
   ### specify shells for every user ###
-  users.users.<username>.shell = pkgs.<shell>;
+  users.users.<username>.shell = pkgs.<shell>; # e.g. pkgs.fish
 
   # SET TO THE SYSTEM VERSION YOU INSTALL WITH THE ISO, DO NOT TOUCH AFTER
   system.stateVersion = "25.11";
