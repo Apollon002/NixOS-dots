@@ -65,6 +65,10 @@
       gthumb.enable = false;
       microfetch.enable = false;
       simpleScan.enable = false;
+      megacmd = {
+        enable = false;
+        autostart = false;
+      };
     };
 
     ### Shell config ###
