@@ -1,4 +1,3 @@
-
 # Hosts
 
 This directory contains all **host-specific NixOS configurations**.
