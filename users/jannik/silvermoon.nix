@@ -101,21 +101,10 @@
     homeDirectory = "/home/jannik";
   };
 
-  # Set default apps
-  home-manager.users.myuser = {
-    xdg.mimeApps = {
-      enable = true;
-      defaultApplications = {
-        # PDF
-        "application/pdf" = "org.gnome.Evince.desktop";
-      };
-    };
-  };
-
   # Environment variables
   home.sessionVariables = {
-    EDITOR = "neovim";
-    VISUAL = "zed";
+    EDITOR = "nvim";
+    VISUAL = "zeditor";
     BROWSER = "librewolf";
     TERMINAL = "kitty";
 
