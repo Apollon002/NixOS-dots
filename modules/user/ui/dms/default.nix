@@ -529,5 +529,11 @@ in
 
       };
     };
+    home.activation = {
+      installPywalfox = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        set -u
+        touch ~/.config/niri/dms/colors.kdl
+      '';
+    };
   };
 }
