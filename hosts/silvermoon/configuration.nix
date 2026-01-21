@@ -3,8 +3,9 @@
 {
   networking.hostName = "silvermoon";
 
-  ### activate modules ###
-  # Pipewire, NetworkManager, Neovim, btop enabled by default
+  ########################
+  ### Activate modules ###
+  ########################
   systemSettings = {
     ### Create users ###
     users = [ "jannik" ];
@@ -54,6 +55,12 @@
     ### Powerprofiles ###
     powerProfiles.enable = false;
 
+    ### Printing ###
+    printing = {
+      cups.enable = true;
+      sane.enable = true;
+    };
+
     ### Security ###
     security = {
       gkr.enable = true;
@@ -70,19 +77,14 @@
     wm = {
       niri.enable = true;
     };
-
-    ### Printing ###
-    printing = {
-      cups.enable = true;
-      sane.enable = true;
-    };
   };
   ### PRINTER DRIVERS ###
   # If needed add additional printer drivers here
   services.printing.drivers = [ ];
 
-  # specify shells for every user
+  ### specify shells for every user ###
   users.users.jannik.shell = pkgs.fish;
 
+  # DO NOT TOUCH
   system.stateVersion = "25.11";
 }
