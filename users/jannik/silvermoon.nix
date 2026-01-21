@@ -59,6 +59,7 @@
       vesktop.enable = true;
       evince.enable = true;
       amberol.enable = true;
+      gthumb.enable = true;
     };
 
     ### Shell config ###
