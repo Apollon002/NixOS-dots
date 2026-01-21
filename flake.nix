@@ -45,10 +45,12 @@
     {
       ### SILVERMOON ###
       nixosConfigurations.silvermoon = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          pkgsStable = pkgsStableAMD;
+        };
         system = systemAMD;
         pkgs = pkgsAMD;
-        pkgsStable = pkgsStableAMD;
         modules = [
           # Entry points for @silvermoon
           ./hosts/silvermoon/default.nix
