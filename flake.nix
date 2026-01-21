@@ -47,6 +47,7 @@
           ./modules/system
         ];
       };
+
       homeConfigurations."jannik@silvermoon" = home-manager.lib.homeManagerConfiguration {
         # Home-Manager requires a "pkgs"-instance
         pkgs = pkgsAMD;
