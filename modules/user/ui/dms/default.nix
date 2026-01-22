@@ -237,7 +237,7 @@ in
         soundPluggedIn = true;
         acMonitorTimeout = 300;
         acLockTimeout = 180;
-        acSuspendTimeout = 900;
+        acSuspendTimeout = 0;
         acSuspendBehavior = 0;
         acProfileName = "";
         batteryMonitorTimeout = 0;
