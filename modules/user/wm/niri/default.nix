@@ -27,6 +27,7 @@ in
     ./general/workspaces.nix
 
     # Styling
+    ./styling/animations.nix
 
     # Windowrules
   ];
