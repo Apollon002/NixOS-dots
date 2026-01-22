@@ -1,333 +1,211 @@
-{ ... }:
+{ config, ... }:
 {
-  programs.niri.settings.binds = [
+  programs.niri.settings.binds = {
     # Hotkey overlay
-    {
-      action = "show-hotkey-overlay";
-      key = "Mod+Ctrl+Period";
-    }
+    "Mod+Ctrl+Period".action.show-hotkey-overlay = { };
 
     # Clients
-    {
-      action = "spawn";
-      key = "Mod+Return"; # falls du MOD vs Mod vereinheitlichen willst: überall "Mod"
-      "hotkey-overlay-title" = "Open a Terminal: kitty";
-      command = [ "kitty" ];
-    }
-    {
-      action = "spawn";
-      key = "Mod+B";
-      "hotkey-overlay-title" = "Open Browser: librewolf";
-      command = [ "librewolf" ];
-    }
+    "Mod+Return" = {
+      action.spawn = [ "kitty" ];
+    };
+    
+    "Mod+B" = {
+      action.spawn = [ "librewolf" ];
+    };
 
     # Session management
-    # { key = "Mod+L"; action = "..."; } # TO BE IMPLEMENTED
-    {
-      key = "Mod+Shift+M";
-      action = "quit";
-    }
-    {
-      key = "Mod+Shift+P";
-      action = "power-off-monitors";
-    }
+    "Mod+Shift+M".action.quit = { };
+    "Mod+Shift+P".action.power-off-monitors = { };
 
     # Window management
-    {
-      key = "Mod+Tab";
-      action = "toggle-overview";
+    "Mod+Tab" = {
       repeat = false;
-    }
-    {
-      key = "Mod+Q";
-      action = "close-window";
+      action.toggle-overview = { };
+    };
+
+    "Mod+Q" = {
       repeat = false;
-    }
+      action.close-window = { };
+    };
 
     # Navigation
-    {
-      key = "Mod+Left";
-      action = "focus-column-left";
-    }
-    {
-      key = "Mod+Down";
-      action = "focus-window-down";
-    }
-    {
-      key = "Mod+Up";
-      action = "focus-window-up";
-    }
-    {
-      key = "Mod+Right";
-      action = "focus-column-right";
-    }
+    "Mod+Left".action.focus-column-left = { };
+    "Mod+Down".action.focus-window-down = { };
+    "Mod+Up".action.focus-window-up = { };
+    "Mod+Right".action.focus-column-right = { };
 
-    # Switch focus between monitors
-    {
-      key = "Mod+Shift+Left";
-      action = "focus-monitor-left";
-    }
-    {
-      key = "Mod+Shift+Down";
-      action = "focus-monitor-down";
-    }
-    {
-      key = "Mod+Shift+Up";
-      action = "focus-monitor-up";
-    }
-    {
-      key = "Mod+Shift+Right";
-      action = "focus-monitor-right";
-    }
-    {
-      key = "Mod+Shift+H";
-      action = "focus-monitor-left";
-    }
-    {
-      key = "Mod+Shift+J";
-      action = "focus-monitor-down";
-    }
-    {
-      key = "Mod+Shift+K";
-      action = "focus-monitor-up";
-    }
-    {
-      key = "Mod+Shift+L";
-      action = "focus-monitor-right";
-    }
+    # Monitor focus
+    "Mod+Shift+Left".action.focus-monitor-left = { };
+    "Mod+Shift+Down".action.focus-monitor-down = { };
+    "Mod+Shift+Up".action.focus-monitor-up = { };
+    "Mod+Shift+Right".action.focus-monitor-right = { };
+    "Mod+Shift+H".action.focus-monitor-left = { };
+    "Mod+Shift+J".action.focus-monitor-down = { };
+    "Mod+Shift+K".action.focus-monitor-up = { };
+    "Mod+Shift+L".action.focus-monitor-right = { };
 
     # Move windows across workspaces
-    {
-      key = "Mod+Alt+Up";
-      action = "move-column-to-workspace-up";
-    }
-    {
-      key = "Mod+Alt+Down";
-      action = "move-column-to-workspace-down";
-    }
+    "Mod+Alt+Up".action.move-column-to-workspace-up = { };
+    "Mod+Alt+Down".action.move-column-to-workspace-down = { };
 
-    # Mouse wheel gestures for navigation
-    {
-      key = "Mod+WheelScrollDown";
-      action = "focus-workspace-down";
-      "cooldown-ms" = 150;
-    }
-    {
-      key = "Mod+WheelScrollUp";
-      action = "focus-workspace-up";
-      "cooldown-ms" = 150;
-    }
-    {
-      key = "Mod+Shift+WheelScrollDown";
-      action = "move-column-to-workspace-down";
-      "cooldown-ms" = 150;
-    }
-    {
-      key = "Mod+Shift+WheelScrollUp";
-      action = "move-column-to-workspace-up";
-      "cooldown-ms" = 150;
-    }
+    # Mouse wheel workspace navigation
+    "Mod+WheelScrollDown" = {
+      cooldown-ms = 150;
+      action.focus-workspace-down = { };
+    };
 
-    # Workspace navigation (named)
-    {
-      key = "Mod+1";
-      action = "focus-workspace";
-      workspace = "work";
-    }
-    {
-      key = "Mod+2";
-      action = "focus-workspace";
-      workspace = "web";
-    }
-    {
-      key = "Mod+3";
-      action = "focus-workspace";
-      workspace = "gaming";
-    }
-    {
-      key = "Mod+4";
-      action = "focus-workspace";
-      workspace = "dev";
-    }
-    {
-      key = "Mod+5";
-      action = "focus-workspace";
-      workspace = "chat";
-    }
-    {
-      key = "Mod+6";
-      action = "focus-workspace";
-      workspace = "scratch";
-    }
+    "Mod+WheelScrollUp" = {
+      cooldown-ms = 150;
+      action.focus-workspace-up = { };
+    };
 
-    {
-      key = "Mod+Shift+1";
-      action = "move-window-to-workspace";
-      workspace = "work";
-    }
-    {
-      key = "Mod+Shift+2";
-      action = "move-window-to-workspace";
-      workspace = "web";
-    }
-    {
-      key = "Mod+Shift+3";
-      action = "move-window-to-workspace";
-      workspace = "gaming";
-    }
-    {
-      key = "Mod+Shift+4";
-      action = "move-window-to-workspace";
-      workspace = "dev";
-    }
-    {
-      key = "Mod+Shift+5";
-      action = "move-window-to-workspace";
-      workspace = "chat";
-    }
-    {
-      key = "Mod+Shift+6";
-      action = "move-window-to-workspace";
-      workspace = "scratch";
-    }
+    "Mod+Shift+WheelScrollDown" = {
+      cooldown-ms = 150;
+      action.move-column-to-workspace-down = { };
+    };
+
+    "Mod+Shift+WheelScrollUp" = {
+      cooldown-ms = 150;
+      action.move-column-to-workspace-up = { };
+    };
+
+    # Workspace focus
+    "Mod+1".action.focus-workspace = "work";
+    "Mod+2".action.focus-workspace = "web";
+    "Mod+3".action.focus-workspace = "gaming";
+    "Mod+4".action.focus-workspace = "dev";
+    "Mod+5".action.focus-workspace = "chat";
+    "Mod+6".action.focus-workspace = "scratch";
+
+    "Mod+Shift+1".action.move-window-to-workspace = "work";
+    "Mod+Shift+2".action.move-window-to-workspace = "web";
+    "Mod+Shift+3".action.move-window-to-workspace = "gaming";
+    "Mod+Shift+4".action.move-window-to-workspace = "dev";
+    "Mod+Shift+5".action.move-window-to-workspace = "chat";
+    "Mod+Shift+6".action.move-window-to-workspace = "scratch";
 
     # Presets
-    {
-      key = "Mod+R";
-      action = "switch-preset-column-width";
-    }
-    {
-      key = "Mod+Shift+R";
-      action = "switch-preset-window-height";
-    }
+    "Mod+R".action.switch-preset-column-width = { };
+    "Mod+Shift+R".action.switch-preset-window-height = { };
 
-    # Full screen settings
-    {
-      key = "Mod+F";
-      action = "maximize-column";
-    }
-    {
-      key = "Mod+Shift+F";
-      action = "maximize-window-to-edges";
-    }
-    {
-      key = "Mod+Alt+F";
-      action = "fullscreen-window";
-    }
+    # Fullscreen / maximize
+    "Mod+F".action.maximize-column = { };
+    "Mod+Shift+F".action.maximize-window-to-edges = { };
+    "Mod+Alt+F".action.fullscreen-window = { };
 
     # Center column
-    {
-      key = "Mod+C";
-      action = "center-column";
-    }
+    "Mod+C".action.center-column = { };
 
-    # Floating windows
-    {
-      key = "Mod+V";
-      action = "toggle-window-floating";
-    }
+    # Floating / tabbed
+    "Mod+V".action.toggle-window-floating = { };
+    "Mod+W".action.toggle-column-tabbed-display = { };
 
-    # Tabbed column mode
-    {
-      key = "Mod+W";
-      action = "toggle-column-tabbed-display";
-    }
+    # Screenshots
+    "Print".action.screenshot = { };
+    "Ctrl+Print".action.screenshot-screen = { };
+    "Alt+Print".action.screenshot-window = { };
 
-    # Screen capture
-    {
-      key = "Print";
-      action = "screenshot";
-    }
-    {
-      key = "Ctrl+Print";
-      action = "screenshot-screen";
-    }
-    {
-      key = "Alt+Print";
-      action = "screenshot-window";
-    }
+    # Audio
+    "XF86AudioRaiseVolume" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "wpctl"
+        "set-volume"
+        "@DEFAULT_AUDIO_SINK@"
+        "0.1+"
+        "-l"
+        "1.0"
+      ];
+    };
 
-    # Multimedia (spawn-sh)
-    {
-      key = "XF86AudioRaiseVolume";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
-    }
-    {
-      key = "XF86AudioLowerVolume";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
-    }
-    {
-      key = "XF86AudioMute";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-    }
-    {
-      key = "XF86AudioMicMute";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-    }
+    "XF86AudioLowerVolume" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "wpctl"
+        "set-volume"
+        "@DEFAULT_AUDIO_SINK@"
+        "0.1-"
+      ];
+    };
 
-    # MPRIS (playerctl)
-    {
-      key = "XF86AudioPlay";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "playerctl play-pause";
-    }
-    {
-      key = "XF86AudioStop";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "playerctl stop";
-    }
-    {
-      key = "XF86AudioPrev";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "playerctl previous";
-    }
-    {
-      key = "XF86AudioNext";
-      action = "spawn-sh";
-      "allow-when-locked" = true;
-      command = "playerctl next";
-    }
+    "XF86AudioMute" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "wpctl"
+        "set-mute"
+        "@DEFAULT_AUDIO_SINK@"
+        "toggle"
+      ];
+    };
+
+    "XF86AudioMicMute" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "wpctl"
+        "set-mute"
+        "@DEFAULT_AUDIO_SOURCE@"
+        "toggle"
+      ];
+    };
+
+    # Media (MPRIS)
+    "XF86AudioPlay" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "playerctl"
+        "play-pause"
+      ];
+    };
+
+    "XF86AudioStop" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "playerctl"
+        "stop"
+      ];
+    };
+
+    "XF86AudioPrev" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "playerctl"
+        "previous"
+      ];
+    };
+
+    "XF86AudioNext" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "playerctl"
+        "next"
+      ];
+    };
 
     # Brightness
-    {
-      key = "XF86MonBrightnessUp";
-      action = "spawn";
-      "allow-when-locked" = true;
-      command = [
+    "XF86MonBrightnessUp" = {
+      allow-when-locked = true;
+      action.spawn = [
         "brightnessctl"
         "--class=backlight"
         "set"
         "+5%"
       ];
-    }
-    {
-      key = "XF86MonBrightnessDown";
-      action = "spawn";
-      "allow-when-locked" = true;
-      command = [
+    };
+
+    "XF86MonBrightnessDown" = {
+      allow-when-locked = true;
+      action.spawn = [
         "brightnessctl"
         "--class=backlight"
         "set"
         "5%-"
       ];
-    }
+    };
 
-    # Inhibitor escape hatch
-    {
-      key = "Mod+Escape";
-      action = "toggle-keyboard-shortcuts-inhibit";
-      "allow-inhibiting" = false;
-    }
-  ];
+    # Keyboard inhibitor escape hatch
+    "Mod+Escape" = {
+      allow-inhibiting = false;
+      action.toggle-keyboard-shortcuts-inhibit = { };
+    };
+  };
 }

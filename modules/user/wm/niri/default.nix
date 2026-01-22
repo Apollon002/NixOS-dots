@@ -1,6 +1,7 @@
 # Imports all window manager configs
 {
   config,
+  pkgs,
   lib,
   inputs,
   ...
@@ -12,13 +13,15 @@ in
 {
   options.userSettings.wmConfig.niri.enable = lib.mkEnableOption "Enable user settings for niri";
   # Import submodules
-  imports = lib.optionals cfg.enable [
+  imports = [
     inputs.niri-flake.homeModules.niri
 
+    ./general/input.nix
     ./general/keymaps.nix
   ];
 
   config = lib.mkIf cfg.enable {
     programs.niri.enable = true;
+    programs.niri.package = pkgs.niri;
   };
 }
