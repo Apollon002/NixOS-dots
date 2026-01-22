@@ -18,6 +18,7 @@ let
         bitwarden
         sponsorblock
         pywalfox
+        darkreader
       ];
     };
     default = {
