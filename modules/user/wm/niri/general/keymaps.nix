@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
   fileBrowser = config.userSettings.fileBrowser;
+  dmsEnabled = config.userSettings.ui.dms.enable;
 in
 {
   programs.niri.settings.binds = lib.mkMerge [
@@ -199,6 +200,12 @@ in
 
     (lib.optionalAttrs (fileBrowser == "nemo") {
       "Mod+E".action.spawn = [ "nemo" ];
+    })
+
+    (lib.optionalAttrs dmsEnabled {
+      "Mod+Space".action.spawn-sh = [ "dms ipc call spotlight toggle" ];
+      "Mod+L".action.spawn-sh = [ "dms ipc call lock lock"];
+      "Mod+P".action.spawn-sh = [ "dms ipc call powermenu toggle" ];
     })
   ];
 }
