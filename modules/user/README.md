@@ -58,6 +58,7 @@ programs
 - simple-scan
 - spotify
 - starship
+- thunderbird
 - vesktop
 
 shells

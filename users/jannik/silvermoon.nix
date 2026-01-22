@@ -63,6 +63,7 @@
       gthumb.enable = true;
       microfetch.enable = true;
       simpleScan.enable = true;
+      thunderbird.enable = true;
       megacmd = {
         enable = true;
         autostart = true;
