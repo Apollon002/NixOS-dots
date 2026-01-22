@@ -18,6 +18,7 @@ in
 
     ./general/input.nix
     ./general/keymaps.nix
+    ./general/misc.nix
   ];
 
   config = lib.mkIf cfg.enable {

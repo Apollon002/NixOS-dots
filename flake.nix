@@ -69,6 +69,7 @@
         extraSpecialArgs = {
           inherit inputs;
           pkgsStable = pkgsStableAMD;
+          host = "silvermoon";
         };
         modules = [
           # Import user settings
