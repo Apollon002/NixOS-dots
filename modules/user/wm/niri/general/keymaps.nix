@@ -66,19 +66,19 @@ in
       };
 
       # Workspace focus
-      "Mod+1".action.focus-workspace = "work";
-      "Mod+2".action.focus-workspace = "web";
-      "Mod+3".action.focus-workspace = "gaming";
-      "Mod+4".action.focus-workspace = "dev";
+      "Mod+1".action.focus-workspace = "dev";
+      "Mod+2".action.focus-workspace = "gaming";
+      "Mod+3".action.focus-workspace = "music";
+      "Mod+4".action.focus-workspace = "work";
       "Mod+5".action.focus-workspace = "chat";
-      "Mod+6".action.focus-workspace = "music";
+      "Mod+6".action.focus-workspace = "web";
 
-      "Mod+Shift+1".action.move-window-to-workspace = "work";
-      "Mod+Shift+2".action.move-window-to-workspace = "web";
-      "Mod+Shift+3".action.move-window-to-workspace = "gaming";
-      "Mod+Shift+4".action.move-window-to-workspace = "dev";
+      "Mod+Shift+1".action.move-window-to-workspace = "dev";
+      "Mod+Shift+2".action.move-window-to-workspace = "gaming";
+      "Mod+Shift+3".action.move-window-to-workspace = "music";
+      "Mod+Shift+4".action.move-window-to-workspace = "work";
       "Mod+Shift+5".action.move-window-to-workspace = "chat";
-      "Mod+Shift+6".action.move-window-to-workspace = "music";
+      "Mod+Shift+6".action.move-window-to-workspace = "web";
 
       # Presets
       "Mod+R".action.switch-preset-column-width = { };
