@@ -23,6 +23,8 @@ in
     ./general/keymaps.nix
     ./general/misc.nix
     ./general/outputs.nix
+    ./general/switch-events.nix
+    ./general/workspaces.nix
 
     # Styling
 
