@@ -16,9 +16,16 @@ in
   imports = [
     inputs.niri-flake.homeModules.niri
 
+    # General settings
+    ./general/autostart.nix
+    ./general/environment.nix
     ./general/input.nix
     ./general/keymaps.nix
     ./general/misc.nix
+
+    # Styling
+
+    # Windowrules
   ];
 
   config = lib.mkIf cfg.enable {
