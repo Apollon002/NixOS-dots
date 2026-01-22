@@ -28,7 +28,7 @@
       ];
 
       focus-ring = {
-        enable = true;
+        enable = false;
         width = 3;
       };
 
