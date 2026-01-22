@@ -22,6 +22,7 @@ in
     ./general/input.nix
     ./general/keymaps.nix
     ./general/misc.nix
+    ./general/outputs.nix
 
     # Styling
 
