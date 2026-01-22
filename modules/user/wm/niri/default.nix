@@ -25,10 +25,11 @@ in
     ./general/outputs.nix
     ./general/switch-events.nix
     ./general/workspaces.nix
+    ./general/windowrules.nix
 
     # Styling
     ./styling/animations.nix
-
+    ./styling/layout.nix
     # Windowrules
   ];
 
