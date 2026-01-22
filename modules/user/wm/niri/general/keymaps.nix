@@ -71,14 +71,14 @@ in
       "Mod+3".action.focus-workspace = "gaming";
       "Mod+4".action.focus-workspace = "dev";
       "Mod+5".action.focus-workspace = "chat";
-      "Mod+6".action.focus-workspace = "scratch";
+      "Mod+6".action.focus-workspace = "music";
 
       "Mod+Shift+1".action.move-window-to-workspace = "work";
       "Mod+Shift+2".action.move-window-to-workspace = "web";
       "Mod+Shift+3".action.move-window-to-workspace = "gaming";
       "Mod+Shift+4".action.move-window-to-workspace = "dev";
       "Mod+Shift+5".action.move-window-to-workspace = "chat";
-      "Mod+Shift+6".action.move-window-to-workspace = "scratch";
+      "Mod+Shift+6".action.move-window-to-workspace = "music";
 
       # Presets
       "Mod+R".action.switch-preset-column-width = { };
@@ -204,7 +204,7 @@ in
 
     (lib.optionalAttrs dmsEnabled {
       "Mod+Space".action.spawn-sh = [ "dms ipc call spotlight toggle" ];
-      "Mod+L".action.spawn-sh = [ "dms ipc call lock lock"];
+      "Mod+L".action.spawn-sh = [ "dms ipc call lock lock" ];
       "Mod+P".action.spawn-sh = [ "dms ipc call powermenu toggle" ];
     })
   ];
