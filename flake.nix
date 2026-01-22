@@ -12,6 +12,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Niri config module
+    niri-flake.url = "github:sodiboo/niri-flake";
+    niri-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     # Firefox Addons
     firefoxAddons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefoxAddons.inputs.nixpkgs.follows = "nixpkgs";

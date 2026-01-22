@@ -78,7 +78,7 @@
 
     ### UI ###
     ui = {
-      dms.enable = true;
+      dms.enable = false;
       pywalfox.enable = true;
       gtk.enable = true;
     };

@@ -1,57 +1,24 @@
+# Imports all window manager configs
 {
   config,
   lib,
+  inputs,
   ...
 }:
 let
+
   cfg = config.userSettings.wmConfig.niri;
-  dmsEnabled = config.userSettings.ui.dms.enable;
-  nemoEnabled = config.userSettings.fileBrowser == "nemo";
 in
 {
-  options.userSettings.wmConfig.niri.enable = lib.mkEnableOption "Enable niri configuration";
+  options.userSettings.wmConfig.niri.enable = lib.mkEnableOption "Enable user settings for niri";
+  # Import submodules
+  imports = lib.optionals cfg.enable [
+    inputs.niri-flake.homeModules.niri
+
+    ./general/keymaps.nix
+  ];
 
   config = lib.mkIf cfg.enable {
-
-    xdg.configFile = {
-      # Alle Dateien/Ordner aus repo/config/niri nach ~/.config/niri/
-      "niri/config.kdl".text =
-        builtins.readFile ./config/config.kdl
-        + "\n"
-        + lib.optionalString dmsEnabled ''include "dms/colors.kdl"'';
-      # general config
-      "niri/general/autostart.kdl".text = builtins.readFile ./config/general/autostart.kdl;
-      "niri/general/input.kdl".text = builtins.readFile ./config/general/input.kdl;
-      "niri/general/keymaps.kdl".text =
-        builtins.readFile ./config/general/keymaps.kdl
-        + "\n"
-        + lib.optionalString dmsEnabled ''
-          // dms keybinds
-          Mod+Space { spawn-sh "dms ipc call spotlight toggle"; }
-          Mod+L { spawn-sh "dms ipc call lock lock"; }
-        ''
-        + "\n"
-        + lib.optionalString nemoEnabled ''Mod+E {spawn "nemo";}''
-        + "\n"
-        + "}";
-      "niri/general/misc.kdl".text = builtins.readFile ./config/general/misc.kdl;
-      "niri/general/outputs.kdl".text = builtins.readFile ./config/general/outputs.kdl;
-      "niri/general/switch-events.kdl".text = builtins.readFile ./config/general/switch-events.kdl;
-      "niri/general/workspaces.kdl".text = builtins.readFile ./config/general/workspaces.kdl;
-      "niri/general/environment.kdl".text = builtins.readFile ./config/general/environment.kdl;
-
-      # styling
-      "niri/styling/animations.kdl".text = builtins.readFile ./config/styling/animations.kdl;
-      "niri/styling/colors.kdl".text = builtins.readFile ./config/styling/colors.kdl;
-      "niri/styling/corners.kdl".text = builtins.readFile ./config/styling/corners.kdl;
-      "niri/styling/cursor.kdl".text = builtins.readFile ./config/styling/cursor.kdl;
-      "niri/styling/layout.kdl".text = builtins.readFile ./config/styling/layout.kdl;
-      # windowrules
-      "niri/windowrules/block_screencapture.kdl".text =
-        builtins.readFile ./config/windowrules/block_screencapture.kdl;
-      "niri/windowrules/spawn_at_workspace.kdl".text =
-        builtins.readFile ./config/windowrules/spawn_at_workspace.kdl;
-      "niri/windowrules/floating.kdl".text = builtins.readFile ./config/windowrules/floating.kdl;
-    };
+    programs.niri.enable = true;
   };
 }
