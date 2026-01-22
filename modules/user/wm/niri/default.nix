@@ -30,6 +30,7 @@ in
     # Styling
     ./styling/animations.nix
     ./styling/layout.nix
+    ./styling/cursor.nix
     # Windowrules
   ];
 
