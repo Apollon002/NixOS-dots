@@ -65,6 +65,9 @@ in
       buffer_font_family = "FiraCode Nerd Font";
       cursor_blink = false;
 
+      # Turn off AI
+      disable_ai = true;
+
       ### Language settings ###
       languages = {
         # Nix
