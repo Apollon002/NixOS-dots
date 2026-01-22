@@ -26,6 +26,7 @@ in
     ./general/switch-events.nix
     ./general/workspaces.nix
     ./general/windowrules.nix
+    ./general/includes.nix
 
     # Styling
     ./styling/animations.nix
