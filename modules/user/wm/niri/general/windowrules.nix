@@ -60,6 +60,12 @@
       ];
       open-on-workspace = "web";
     }
+    {
+      matches = [
+        { app-id = "Spotify"; }
+      ];
+      open-on-workspace = "music";
+    }
 
     # Floating windows
     {
@@ -73,6 +79,20 @@
       default-column-width = {
         fixed = 1135;
       };
+    }
+
+    # Block from screenshare
+    {
+      matches = [
+        { app-id = "Bitwarden"; }
+      ];
+      block-out-from = "screen-capture";
+    }
+    {
+      matches = [
+        { app-id = "Bitwarden"; }
+      ];
+      block-out-from = "screencast";
     }
   ];
 }
