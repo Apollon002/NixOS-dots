@@ -51,7 +51,11 @@
     in
 
     {
-      ### SILVERMOON ###
+      ###############
+      ### SYSTEMS ###
+      ###############
+
+      # Silvermoon
       nixosConfigurations.silvermoon = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -67,6 +71,27 @@
         ];
       };
 
+      # Darkshire
+      nixosConfigurations.darkshire = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgsStable = pkgsStableAMD;
+        };
+        system = systemAMD;
+        pkgs = pkgsAMD;
+        modules = [
+          # Entry points for @silvermoon
+          ./hosts/darkshire/default.nix
+          # System-wide modules
+          ./modules/system
+        ];
+      };
+
+      #############
+      ### USERS ###
+      #############
+
+      # Jannik
       homeConfigurations."jannik@silvermoon" = home-manager.lib.homeManagerConfiguration {
         # Home-Manager requires a "pkgs"-instance
         pkgs = pkgsAMD;
@@ -78,6 +103,22 @@
         modules = [
           # Import user settings
           ./users/jannik/silvermoon.nix
+          # user-wide modules
+          ./modules/user
+        ];
+      };
+
+      homeConfigurations."jannik@darkshire" = home-manager.lib.homeManagerConfiguration {
+        # Home-Manager requires a "pkgs"-instance
+        pkgs = pkgsAMD;
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgsStable = pkgsStableAMD;
+          host = "darkshire";
+        };
+        modules = [
+          # Import user settings
+          ./users/jannik/darkshire.nix
           # user-wide modules
           ./modules/user
         ];
