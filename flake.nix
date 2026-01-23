@@ -23,6 +23,10 @@
     # Dank Material Shell
     dms.url = "github:AvengeMedia/DankMaterialShell";
     dms.inputs.nixpkgs.follows = "nixpkgs";
+
+    # MEGA-CMD
+    nixpkgs-megacmd.url = "github:lunik1/nixpkgs/megacmd-bin";
+    nixpkgs-megacmd.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
