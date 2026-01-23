@@ -2,6 +2,7 @@
   programs.niri.settings.input = {
     keyboard = {
       xkb.layout = "de";
+      xkb.variant = "nodeadkeys";
       repeat-delay = 200;
       repeat-rate = 40;
       track-layout = "global";
