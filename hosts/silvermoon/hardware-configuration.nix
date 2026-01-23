@@ -41,11 +41,6 @@
     ];
   };
 
-  fileSystems."/games" = {
-    device = "/dev/disk/by-label/GAMES";
-    fsType = "ext4";
-  };
-
   fileSystems."/misc" = {
     device = "/dev/disk/by-label/MISC";
     fsType = "ext4";
