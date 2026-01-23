@@ -18,6 +18,10 @@ hosts/
 │  ├─ configuration.nix
 │  ├─ default.nix
 │  └─ hardware-configuration.nix
+├─ darkshire/
+│  ├─ configuration.nix
+│  ├─ default.nix
+│  └─ hardware-configuration.nix
 └─ README.md
 ```
 
