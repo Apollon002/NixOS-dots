@@ -24,7 +24,7 @@
     };
 
     ### AppImages ###
-    appimage.enable = false;
+    appImage.enable = false;
 
     ### Bluetooth ###
     bluetooth.enable = true;
