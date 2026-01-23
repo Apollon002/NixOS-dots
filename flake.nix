@@ -26,7 +26,6 @@
 
     # MEGA-CMD
     nixpkgs-megacmd.url = "github:lunik1/nixpkgs/megacmd-bin";
-    nixpkgs-megacmd.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
