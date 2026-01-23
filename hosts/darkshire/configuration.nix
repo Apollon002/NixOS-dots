@@ -23,6 +23,9 @@
       pipewire.enable = true;
     };
 
+    ### AppImages ###
+    appimage.enable = false;
+
     ### Bluetooth ###
     bluetooth.enable = true;
 

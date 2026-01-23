@@ -23,6 +23,9 @@ audio
 - Audio stack configuration
 - pipewire: PipeWire-based audio setup
 
+appImage
+- enables appimages with appimage-run
+
 base
 - Base system configuration used by all hosts
 
