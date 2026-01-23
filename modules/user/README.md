@@ -59,6 +59,7 @@ programs
 - starship
 - thunderbird
 - vesktop
+- megacmd (with autostart option)
 
 shells
 - User shell configuration
