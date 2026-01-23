@@ -115,7 +115,20 @@
     VISUAL = "zeditor";
     BROWSER = "librewolf";
     TERMINAL = "kitty";
+  };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      # Web
+      "text/html" = "librewolf.desktop";
+      "x-scheme-handler/http" = "librewolf.desktop";
+      "x-scheme-handler/https" = "librewolf.desktop";
+      "x-scheme-handler/about" = "librewolf.desktop";
+      "x-scheme-handler/unknown" = "librewolf.desktop";
+      # PDF
+      "application/pdf" = "org.gnome.Evince.desktop";
+    };
   };
 
   home.stateVersion = "26.05";

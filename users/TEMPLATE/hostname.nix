@@ -117,9 +117,22 @@
     VISUAL = "DEFAULT GRAPHICAL EDITOR COMMAND (higher priority than EDITOR)";
     BROWSER = "DEFAULT BROWSER COMMAND";
     TERMINAL = "DEFAULT TERMINAL COMMAND";
+  };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      # Web
+      "text/html" = "BROWSER.desktop";
+      "x-scheme-handler/http" = "BROWSER.desktop";
+      "x-scheme-handler/https" = "BROWSER.desktop";
+      "x-scheme-handler/about" = "BROWSER.desktop";
+      "x-scheme-handler/unknown" = "BROWSER.desktop";
+      # PDF
+      "application/pdf" = "PDFREADER.desktop";
+    };
   };
 
   # SET TO THE SYSTEM VERSION YOU INSTALL WITH THE ISO, DO NOT TOUCH AFTER
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 }

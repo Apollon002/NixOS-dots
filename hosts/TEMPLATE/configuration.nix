@@ -89,5 +89,5 @@
   users.users.<username>.shell = pkgs.<shell>; # e.g. pkgs.fish
 
   # SET TO THE SYSTEM VERSION YOU INSTALL WITH THE ISO, DO NOT TOUCH AFTER
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }
