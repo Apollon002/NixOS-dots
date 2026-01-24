@@ -7,7 +7,7 @@
 }:
 let
   cfg = config.userSettings.programs.megacmd;
-  megaPkgs = inputs.nixpkgs-megacmd.legacyPackages.${pkgs.system};
+  megaPkgs = inputs.nixpkgs-megacmd.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   options.userSettings.programs.megacmd = {
