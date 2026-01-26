@@ -19,6 +19,7 @@ in
       "nix"
       "aura-theme"
       "catppuccin-icons"
+      "typst"
     ];
 
     programs.zed-editor.userSettings = {
