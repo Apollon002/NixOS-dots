@@ -24,7 +24,8 @@ editor
 - Editor configuration and tooling
 - zed
 - lsps
-  - nixlsp
+  - nix
+  - typst
 - formatter
   - nixfmt
 

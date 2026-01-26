@@ -26,6 +26,7 @@
       # LSP's
       lsp = {
         nix.enable = true;
+        typst.enable = true;
       };
       # Formatters
       formatter = {

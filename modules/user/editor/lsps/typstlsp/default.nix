@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.userSettings.editors.lsp.nix;
+  cfg = config.userSettings.editors.lsp.typst;
 in
 {
   options.userSettings.editors.lsp.typst.enable =
