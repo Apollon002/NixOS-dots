@@ -41,6 +41,8 @@
     fonts = {
       firaNerd.enable = false;
       roboto.enable = false;
+      garamond.enable = false;
+      lmodern.enable = false;
     };
 
     ### Icons ###

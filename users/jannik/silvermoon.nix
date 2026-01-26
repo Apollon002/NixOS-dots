@@ -39,6 +39,8 @@
     fonts = {
       firaNerd.enable = true;
       roboto.enable = true;
+      garamond.enable = true;
+      lmodern.enable = true;
     };
 
     ### Icons ###
