@@ -36,9 +36,9 @@ in
         };
       };
       ### UI ####
-      #  status_bar = {
-      #     "experimental.show" = false;
-      #  };
+      status_bar = {
+        "experimental.show" = false;
+      };
       project_panel = {
         "default_width" = 400;
         "auto_fold_dirs" = false;
@@ -78,6 +78,14 @@ in
             external = {
               "command" = "nixfmt";
             };
+          };
+        };
+      };
+      lsp = {
+        tinymist = {
+          settings = {
+            exportPdf = "onSave";
+            outputPath = "$root/$name";
           };
         };
       };
