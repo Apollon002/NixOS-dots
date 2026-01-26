@@ -45,6 +45,7 @@ gaming
 - steam
 - heroic
 - minecraft
+- gpu-screen-recorder
 
 graphics (only one at a time)
 - GPU and graphics stack configuration

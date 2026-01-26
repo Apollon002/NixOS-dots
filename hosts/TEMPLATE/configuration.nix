@@ -41,6 +41,7 @@
       heroic.enable = false;
       minecraft.enable = false;
       steam.enable = false;
+      screenRecorder = false;
     };
 
     ### Graphics driver ###
