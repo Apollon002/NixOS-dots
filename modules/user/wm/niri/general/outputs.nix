@@ -3,7 +3,7 @@
 let
   outputsByHost = {
     silvermoon = {
-      "DP-3" = {
+      "ASUSTek COMPUTER INC VG27A R7LMQS113801" = {
         mode = {
           width = 2560;
           height = 1440;
@@ -17,7 +17,7 @@ let
         variable-refresh-rate = "on-demand";
         focus-at-startup = true;
       };
-      "DP-4" = {
+      "LG Electronics 24GM79G 0x0008040D" = {
         mode = {
           width = 1920;
           height = 1080;
