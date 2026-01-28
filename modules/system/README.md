@@ -45,6 +45,7 @@ gaming
 - steam
 - heroic
 - minecraft
+- faugus
 - gpu-screen-recorder
 
 graphics (only one at a time)

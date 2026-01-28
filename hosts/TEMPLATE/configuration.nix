@@ -41,6 +41,7 @@
       heroic.enable = false;
       minecraft.enable = false;
       steam.enable = false;
+      faugus.enable = true;
       screenRecorder = false;
     };
 
