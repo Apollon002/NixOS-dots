@@ -46,7 +46,6 @@ gaming
 - heroic
 - minecraft
 - faugus
-- gpu-screen-recorder
 
 graphics (only one at a time)
 - GPU and graphics stack configuration
